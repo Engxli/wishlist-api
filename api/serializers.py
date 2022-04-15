@@ -1,4 +1,5 @@
 from rest_framework import serializers
+<<<<<<< HEAD
 from items.models import Item, FavoriteItem
 from django.contrib.auth.models import User
 from djoser.serializers import UserSerializer as BaseUserSerializer, UserCreateSerializer as BaseUserCreateSerializer
@@ -57,3 +58,20 @@ class ItemDetailSerializer(serializers.ModelSerializer):
         for item in item.favoriteitem_set.all():
             by.append(item.user.username)
         return by
+=======
+from items.models import Item
+
+class ItemListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields=['id','name']
+        detail = serializers.HyperlinkedRelatedField(
+            queryset=Item.objects.all(),
+            view_name='api-detial'
+        )
+
+class ItemDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields=['id','name', 'description', 'image']
+>>>>>>> e0015007c475aec69c5e1b13c18609d87a575b4a

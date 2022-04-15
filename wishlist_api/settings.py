@@ -59,6 +59,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+<<<<<<< HEAD
     # 'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.IsAuthenticated']
 }
 
@@ -77,6 +78,14 @@ SIMPLE_JWT = {
 }
 
 
+=======
+}
+
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+}
+
+>>>>>>> e0015007c475aec69c5e1b13c18609d87a575b4a
 ROOT_URLCONF = 'wishlist_api.urls'
 
 TEMPLATES = [
